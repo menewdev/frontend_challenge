@@ -22,7 +22,7 @@ const CalendarHeader: React.FC<CalendarHeaderProps> = ({ currentDate, onPrevClic
                     </svg>
                 </button>
             </div>
-            <div className="flex justify-between px-[20px]">
+            <div className="flex justify-between px-[35px]">
                 {weekdaysList.map((day, index) => (
                     <div key={day} className={'text-[11px] ' + (index === 0 ? "text-red" : index === 6 ? 'text-blue-dark' : 'text-gray')}>
                         {day}
