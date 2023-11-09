@@ -24,3 +24,17 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tick::after {
+  content: "\2713";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #FF7055;
+  color: #FFFFFF;
+  font-size: 8px;
+  font-weight: 700;
+}

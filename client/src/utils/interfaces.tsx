@@ -11,7 +11,7 @@ export interface CalendarGridProps {
 export interface Schedule {
     id: number;
     user_id: number;
-    date: string;
+    date: Date;
 }
 
 export interface ScheduleData {

@@ -37,13 +37,19 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate }) => {
         )
         pastDay++;
     }
+
     for (let i = 1; i <= lastDay; i++) {
+        const scheduleForDay = data?.schedules.find(
+            (schedule) =>
+                new Date(schedule.date).toDateString() === new Date(currentDate.getFullYear(), currentDate.getMonth(), i).toDateString()
+        );
         days.push(
-            <button key={i} className='w-[39px] h-[39px] border-[1px] border-gray-light rounded-full m-[5px] '>
+            < button key={i} className={'w-[39px] h-[39px] border-[1px] rounded-full m-[5px] ' + (scheduleForDay ? 'tick relative border-orange' : 'border-gray-light')} >
                 {i}
-            </button>
+            </button >
         )
     }
+
     for (let i = 1; i <= 6 - lastDayIndex; i++) {
         endBlanks.push(
             <button disabled key={-i} className={'w-[39px] h-[39px] opacity-30 m-[5px]'}>
